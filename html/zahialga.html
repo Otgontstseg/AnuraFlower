@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/zahialgaStyle.css" type="text/css">
+    <link rel="website icon" type="png" href="../img/anuralogo.png">
+    <title>zahialga</title>
+</head>
+
+<body>
+    <article class="head">
+        <header>
+            <nav class="topMenu">
+                <ul>
+                    <li id="modeImg"><img src="../img/moon.png" alt="darkMode" style="width: 30px;" id="moon"></li>
+                    <li id="text"><h1>Welcome AnuraFlower</h1></li>
+                    <li id="ticketCard"><i class="fa-solid fa-cart-shopping" style="color: #60f410;"></i>
+                        <span class="quantity">0</span></li>
+                </ul>
+            </nav>
+            
+            
+            <!-- <div class="shopping">
+                
+            </div> -->
+        </header>
+    </article>
+    <!--<article id="cartItem">Your Cart Empty</article>-->
+    <article class="container">
+        <article id="root"></article>
+    </article>
+
+    <script src="../js/zahialga.js"></script>
+</body>
+<script>
+    let clickCount = 0; // Drasn towchnii too
+
+    
+    function addCard() {
+        clickCount++; // Towch darahad nemegdene
+        // Haruulah
+        let quantitySpan = document.querySelector('.quantity');
+        quantitySpan.textContent = clickCount;
+    }
+    function showDetail(){
+        //delgerengui medeelliig haruulah
+        
+    }
+</script>
+<script>
+      var moon = document.getElementById("moon");
+    moon.onclick = function () {
+        document.body.classList.toggle("dark-theme");
+        if (document.body.classList.contains("dark-theme")) {
+            moon.src = "../img/light.png";
+        }
+    }
+</script>
+
+
+</html>

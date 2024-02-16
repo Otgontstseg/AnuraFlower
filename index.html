@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnuraFlower</title>
+    <link rel="website icon" type="png" href="img/anuralogo.png">
+    <link rel="stylesheet" href="home.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/1b9044548f.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="first">
+        <h1 class="logoTxt">Anura<span>Flower</span></h1>
+        <img src="img/anuralogo.png" alt=""id="logo-img">
+        <div class="headerRight">
+            <a href="html/login.html"><i id="user" class='far fa-user-circle' style='font-size:24px'></i></a>
+        </div>
+
+    </header>
+    <section class="header">
+
+        <nav class="topList">
+            <ul class="topMenu">
+                <li><a href="html/addCard.html">
+                        <h3>Нүүр хуудас</h3>
+                    </a></li>
+                <li><a href="html/zahialga.html">
+                        <h3>Захиалга</h3>
+                    </a></li>
+                <li><a href="html/help.html">
+                        <h3>Хүргэлт</h3>
+                    </a></li>
+                <li><a href="html/support.html">
+                        <h3>Холбоо барих</h3>
+                    </a></li>
+            </ul>
+        </nav>
+        <img src="img/moon.svg" alt="darkMode" style="width: 30px;" id="moon">
+        <!--End search hiij ur dung gargaj irdeg bolgoh-->
+
+    </section>
+    <section class="video">
+        <div class="videoContainer">
+        <img src="img/valentine1.jpg" alt="tsetseg">
+        </div>
+    </section>
+
+</body>
+<!--Darkmode demjih heseg-->
+<script>
+    var moon = document.getElementById("moon");
+    moon.onclick = function () {
+        document.body.classList.toggle("dark-theme");
+        if (document.body.classList.contains("dark-theme")) {
+            moon.src = "img/light.png";
+        }
+    }
+  /*  function myMap() {
+        var mapProp = {
+            center: new google.maps.LatLng(51.508742, -0.120850),
+            zoom: 5,
+        };
+        var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+    }*/</script>
+<script type="module">
+    import RecentNews from './modules/RecentNews.js';
+    //shortcut to getElementID
+    const gebi = id => document.getElementById(id);
+    //Create RecentNews object
+    const recentNews = new RecentNews("https://api.jsonbin.io/v3/b/64cb37329d312622a38af6a9");
+    //Load content from RecentNewsURL
+    recentNews.Download("main");
+    //Download news in every 45 seconds into #main
+    setInterval(() =>
+        recentNews.Download("main")
+        , 45000);
+    setInterval(() => recentNews.Upload(), 30000);
+</script>
+
+
+</html>
